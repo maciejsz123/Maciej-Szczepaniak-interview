@@ -1,0 +1,174 @@
+@import "../../App.sass"
+
+.container
+  padding: 0 $space-on-sides
+  margin-top: 75px
+
+.d-flex
+  display: flex
+  flex-flow: row nowrap
+
+.gallery-PDP
+  width: 10%
+  display: flex
+  flex-flow: column nowrap
+
+.gallery-img
+  max-width: 80px
+  height: 80px
+  margin-bottom: 20px
+  cursor: pointer
+
+.full-img-DPD
+  width: 45%
+  img
+    height: 500px
+    width: 100%
+
+.description-DPD
+  width: 45%
+  & > div
+    margin: 0 100px
+    min-width: 250px
+
+.attribute-item
+  border: 1px solid black
+  margin: 6px
+  padding: 10px
+  cursor: pointer
+  @include sans-pro
+  font-weight: 400
+  font-size: 16px
+  &:hover
+    color: $c-white
+    background-color: $c-text
+
+.active-attribute-color-item
+  border: 2px solid $c-active-border
+  margin: 5px
+
+.active-attribute-type-item
+  color: $c-white
+  background-color: black
+
+.add-to-cart-btn
+  background-color: $c-primary
+  color: $c-white
+  width: 100%
+  @include raleway
+  font-weight: 600
+  font-size: 16px
+  line-height: 19px
+  text-transform: uppercase
+  padding: 16px 32px
+  cursor: pointer
+  border: 0
+
+.add-to-cart-btn:disabled
+  background-color: $c-primary
+  opacity: 0.5
+  cursor: auto
+
+.brand-name
+  @include raleway
+  font-weight: 600
+  font-size: 30px
+  line-height: 27px
+  color: $c-text
+  margin-bottom: 10px
+
+.product-name
+  @include raleway
+  font-weight: 300
+  font-size: 30px
+  line-height: 27px
+  color: $c-text
+  margin-bottom: 35px
+
+.price-text
+  @include roboto-condensed
+  font-weight: 700
+  font-size: 18px
+  line-height: 18px
+  color: $c-text
+  margin-bottom: 15px
+
+.attribute-name
+  @include roboto-condensed
+  font-weight: 700
+  font-size: 18px
+  line-height: 18px
+  color: $c-text
+  text-transform: uppercase
+
+.button-div-PDP
+  padding: 15px 0
+
+.description
+  @include roboto
+  font-weight: 400
+  font-size: 16px
+  line-height: 25px
+  color: $c-text
+
+@media only screen and(max-width: 800px)
+  .container
+    margin-top: 50px
+
+  .gallery-img
+    max-width: 70px
+    height: 70px
+    margin-bottom: 10px
+
+  .full-img-DPD
+    width: 45%
+    img
+      height: 350px
+      width: 100%
+
+  .description-DPD
+    width: 45%
+    & > div
+      margin: 0 30px
+      min-width: 200px
+
+  .attribute-item
+    margin: 3px
+    padding: 6px
+    font-size: 14px
+
+  .add-to-cart-btn
+    font-size: 14px
+    line-height: 19px
+    text-transform: uppercase
+    padding: 12px 26px
+
+  .brand-name
+    font-size: 24px
+    margin-bottom: 7px
+
+  .product-name
+    font-size: 24px
+    margin-bottom: 26px
+
+  .price-text
+    font-size: 16px
+    margin-bottom: 12px
+
+  .attribute-name
+    font-size: 16px
+
+  .description
+    font-size: 14px
+
+
+@media only screen and(max-width: 600px)
+  .gallery-img
+    max-width: 50px
+    height: 50px
+
+  .full-img-DPD
+    width: 45%
+    img
+      height: 220px
+      width: 100%

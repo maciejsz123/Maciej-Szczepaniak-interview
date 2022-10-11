@@ -1,0 +1,83 @@
+@import "../../../App.sass"
+
+.header-actions
+  display: flex
+  flex-flow: row nowrap
+  height: 100%
+  align-items: center
+  justify-content: flex-end
+
+.currency-header
+  position: relative
+  cursor: pointer
+  
+.currency-dropdown
+  display: flex
+  flex-flow: row
+  align-items: center
+  justify-content: center
+  padding: 0 5px
+  &>div
+    padding: 0 3px
+
+.justify-center
+  justify-content: center
+
+.rotate-180
+  transition: 0.3s
+  transform: rotate(180deg)
+
+.rotate-0
+  transition: 0.3s
+  transform: rotate(0deg)
+
+#currency-switcher
+  position: absolute
+  filter: drop-shadow(0px 4px 35px rgba(168, 172, 176, 0.19))
+  position: absolute
+  background-color: $c-white
+  z-index: 10
+  left: -25px
+
+.inactive-currency-switcher
+  display: none
+
+.active-currency-switcher
+  display: block
+
+.currency-switcher-item
+  padding: 5px 10px
+  cursor: pointer
+  width: 75px
+  &:hover
+    background-color: $c-grey
+
+.cart-items
+  position: absolute
+  width: 20px
+  height: 20px
+  top: -10px
+  right: -10px
+  background-color: $c-text
+  color: $c-white
+  border-radius: 60px
+  &>div
+    @include roboto
+    font-style: normal
+    font-weight: 700
+    font-size: 14px
+    line-height: 16px
+    display: flex
+    align-items: center
+    text-align: center
+    justify-content: center
+    text-transform: uppercase
+    height: 100%
+
+.cart-img-size
+  width: 20px
+  height: 20px
+
+.cart-icon-container
+  position: relative
+  cursor: pointer

@@ -1,0 +1,238 @@
+@import "../../App.sass"
+
+$carouselWidth: 200px
+$carouselHeight: 288px
+$media800decreasepx: 20px
+$media600decreasepx: 40px
+
+.d-flex-column
+  display: flex
+  flex-flow: column
+
+.d-flex-row
+  display: flex
+  flex-flow: row
+
+.space-between
+  justify-content: space-between
+
+.align-items-center
+  align-items: center
+
+.m-1
+  margin: 0 5px
+
+.carousel
+  position: relative
+
+.slider
+  width: $carouselWidth
+  overflow: hidden
+  position: relative
+
+.carousel-images
+  padding: 0
+  margin: 0
+  position: relative
+  display: flex
+  flex-flow: row nowrap
+  justify-content: flex-start
+  transition: 0.6s all
+
+.carousel-elem
+  display: inline
+
+.carousel-img
+  width: $carouselWidth
+  height: $carouselHeight
+
+@mixin arrow
+  position: absolute
+  background-color: black
+  height: 20px
+  width: 20px
+
+.arrows
+  position: absolute
+  right: 20px
+  bottom: 20px
+  width: 50px
+  height: 20px
+
+.left-arrow
+  @include arrow
+  left: 0
+  cursor: pointer
+
+.right-arrow
+  @include arrow
+  right: 0
+  transform: rotate(180deg)
+  cursor: pointer
+
+.overlay-title
+  font-size: 16px
+  @include raleway
+  font-weight: 300
+
+.cart-title
+  font-size: 30px
+  @include raleway
+  font-weight: 600
+  line-height: 27px
+
+.cart-item-name
+  font-size: 30px
+  @include raleway
+  font-weight: 400
+  line-height: 27px
+
+.overlay-attribute-title
+  font-size: 14px
+  @include raleway
+
+.cart-attribute-title
+  font-size: 18px
+  line-height: 18px
+  font-weight: 700
+  @include roboto
+  text-transform: uppercase
+
+.overlay-attribute
+  border: 1px solid black
+  font-size: 14px
+  @include sans-pro
+  min-width: 15px
+  padding: 6px !important
+  margin: 3px !important
+  text-align: center
+
+.overlay-attribute-color
+  padding: 7px 0px !important
+
+.cart-attribute
+  border: 1px solid black
+  margin: 6px
+  padding: 10px
+  @include sans-pro
+  font-size: 16px
+  line-height: 18px
+  font-weight: 400
+  color: $c-text
+
+.overlay-img-size
+  width: 120px
+  height: 170px
+
+.counter-button
+  border: 1px solid $c-text
+  padding: 5px
+  font-size: 16px
+  text-align: center
+  width: 14px
+  cursor: pointer
+  &:hover
+    color: $c-white
+    background-color: $c-text
+
+.cart-counter
+  @include raleway
+  color: $c-text
+  font-weight: 500
+  font-size: 24px
+  line-height: 160%
+
+.overlay-counter
+  @include raleway
+  color: $c-text
+  font-weight: 500
+  font-size: 16px
+  line-height: 160%
+
+@media only screen and(max-width: 800px)
+  .carousel-img
+    width: calc(#{$carouselWidth} - #{$media800decreasepx})
+    height: calc(#{$carouselHeight} - #{$media800decreasepx})
+
+  .slider
+    width: calc(#{$carouselWidth} - #{$media800decreasepx})
+
+  .carousel-img
+    width: calc(#{$carouselWidth} - #{$media800decreasepx})
+    height: calc(#{$carouselHeight} - #{$media800decreasepx})
+
+  .overlay-title
+    font-size: 14px
+
+  .cart-title
+    font-size: 24px
+
+  .cart-item-name
+    font-size: 24px
+
+  .overlay-attribute-title
+    font-size: 12px
+
+  .cart-attribute-title
+    font-size: 15px
+
+  .cart-attribute
+    font-size: 14px
+    margin: 4px
+    padding: 7px
+
+  .overlay-img-size
+    width: 100px
+    height: 150px
+
+  .counter-button
+    font-size: 14px
+    width: 12px
+
+  .cart-counter
+    font-size: 16px
+
+
+@media only screen and(max-width: 600px)
+  .carousel-img
+    width: calc(#{$carouselWidth} - #{$media600decreasepx})
+    height: calc(#{$carouselHeight} - #{$media600decreasepx})
+
+  .slider
+    width: calc(#{$carouselWidth} - #{$media600decreasepx})
+
+  .carousel-img
+    width: calc(#{$carouselWidth} - #{$media600decreasepx})
+    height: calc(#{$carouselHeight} - #{$media600decreasepx})
+
+
+  .overlay-title
+    font-size: 14px
+
+  .cart-title
+    font-size: 24px
+
+  .cart-item-name
+    font-size: 24px
+
+  .overlay-attribute-title
+    font-size: 12px
+
+  .cart-attribute-title
+    font-size: 15px
+
+  .cart-attribute
+    font-size: 14px
+    margin: 4px
+    padding: 7px
+
+  .overlay-img-size
+    width: 100px
+    height: 150px
+
+  .counter-button
+    font-size: 14px
+    width: 12px
+
+  .cart-counter
+    font-size: 16px

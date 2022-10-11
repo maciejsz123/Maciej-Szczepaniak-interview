@@ -1,0 +1,33 @@
+@import "../../App.sass"
+
+.currency-display-text
+  width: 58px
+  height: 29px
+  @include raleway
+  font-weight: 500
+  font-style: normal
+  font-size: 18px
+  line-height: 160%
+  text-align: right
+  color: $c-text
+  flex: none
+  order: 0
+  flex-grow: 0
+
+.currency-cart-text
+  font-weight: 700
+  font-size: 24px
+  width: 58px
+  height: 29px
+  @include raleway
+  font-style: normal
+  line-height: 160%
+  text-align: right
+  color: $c-text
+  flex: none
+  order: 0
+  flex-grow: 0
+
+@media only screen and(max-width: 800px)
+  .currency-cart-text
+    font-size: 18px

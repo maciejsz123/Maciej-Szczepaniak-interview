@@ -1,0 +1,95 @@
+@import "../../App.sass"
+
+.padding
+  padding: 0 $space-on-sides
+
+.line
+  width: 100%
+  height: 1px
+  background-color: #E5E5E5E5
+
+.title-text
+  @include raleway
+  font-weight: 700
+  font-size: 32px
+  line-height: 40px
+  color: $c-text
+
+.grid
+  display: grid
+  grid-template-areas: "tax-title tax-amount" "quantity-title quantity-amount" "total-title total-amount" "grid-button grid-button"
+  grid-template-columns: 100px 200px
+
+.tax-title
+  grid-area: tax-title
+  @include raleway
+  font-weight: 400
+  font-size: 24px
+  line-height: 28px
+
+.tax-amount
+  grid-area: tax-amount
+  @include raleway
+  font-weight: 700
+  font-size: 24px
+  line-height: 28px
+
+.quantity-title
+  grid-area: quantity-title
+  @include raleway
+  font-weight: 400
+  font-size: 24px
+  line-height: 28px
+
+.quantity-amount
+  grid-area: quantity-amount
+  @include raleway
+  font-weight: 700
+  font-size: 24px
+  line-height: 28px
+
+.total-title
+  grid-area: total-title
+  @include raleway
+  font-weight: 500
+  font-size: 24px
+  line-height: 28px
+
+.total-amount
+  grid-area: total-amount
+  @include raleway
+  font-weight: 700
+  font-size: 24px
+  line-height: 28px
+
+.grid-button
+  grid-area: grid-button
+  margin: 10px 0
+
+@media only screen and(max-width: 800px)
+  .title-text
+    font-size: 26px
+
+  .grid
+    grid-template-columns: 75px 150px
+
+  .tax-title
+    font-size: 18px
+
+  .tax-amount
+    font-size: 18px
+
+  .quantity-title
+    font-size: 18px
+
+  .quantity-amount
+    font-size: 18px
+
+  .total-title
+    font-size: 18px
+
+  .total-amount
+    font-size: 18px
+
+  .grid-button
+    margin: 10px 0
