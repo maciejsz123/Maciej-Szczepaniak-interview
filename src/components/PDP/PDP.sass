@@ -1,4 +1,5 @@
 @import "../../App.sass"
+$img-height: 500px
 
 .container
   padding: 0 $space-on-sides
@@ -12,6 +13,8 @@
   width: 10%
   display: flex
   flex-flow: column nowrap
+  max-height: $img-height
+  overflow: auto
 
 .gallery-img
   max-width: 80px
@@ -22,7 +25,7 @@
 .full-img-DPD
   width: 45%
   img
-    height: 500px
+    height: $img-height
     width: 100%
 
 .description-DPD
@@ -121,10 +124,14 @@
     margin-bottom: 10px
 
   .full-img-DPD
-    width: 45%
+    width: 40%
     img
-      height: 350px
+      height: calc(#{$img-height} - 100px)
       width: 100%
+
+  .gallery-PDP
+    width: 15%
+    max-height: calc(#{$img-height} - 100px)
 
   .description-DPD
     width: 45%
@@ -168,7 +175,11 @@
     height: 50px
 
   .full-img-DPD
-    width: 45%
+    width: 40%
     img
-      height: 220px
+      height: calc(#{$img-height} - 200px)
       width: 100%
+
+  .gallery-PDP
+    width: 15%
+    max-height: calc(#{$img-height} - 200px)
