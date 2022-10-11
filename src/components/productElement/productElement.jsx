@@ -21,8 +21,8 @@ class ProductElement extends Component {
     let outOfStock = this.props.data.inStock ? '' : <div className='out-of-stock'><div>OUT OF STOCK</div></div>
     return (
       <div className='product-card'>
-          {outOfStock}
         <Link to={`/product/${this.props.data.id}`} style={{padding: '10px'}}>
+          {outOfStock}
             <div>
               <img src={this.props.data.gallery[0]} alt='prod' className='product-card-img'/>
               {this.props.data.inStock ? (
