@@ -5,61 +5,106 @@ import { connect } from 'react-redux';
 import ProductElement from '../productElement/productElement';
 import './productsOverlay.sass';
 
-const GET_PRODUCTS = gql`
-  {
-    __typename @skip(if: true)
-    categories {
-      __typename @skip(if: true)
-      name
-      products {
-        id
-        __typename @skip(if: true)
-        name
-        inStock
-        gallery
-        description
-        category
-        attributes {
-          id
-          __typename @skip(if: true)
-          name
-          type
-          items {
-            value
-          }
-        }
-        prices {
-          currency {
-            label
-            symbol
-          }
-          amount
-        }
-        brand
-      }
+class ProductsOverlay extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      products: null
     }
   }
-`;
 
-class ProductsOverlay extends Component {
+  componentDidMount() {
+    const PRODUCTS = gql`
+      {
+        __typename @skip(if: true)
+        category(input: {title: "${this.props.activeCategory}"}) {
+          __typename @skip(if: true)
+          name
+          products {
+            id
+            __typename @skip(if: true)
+            name
+            inStock
+            gallery
+            description
+            category
+            attributes {
+              id
+              __typename @skip(if: true)
+              name
+              type
+              items {
+                value
+              }
+            }
+            prices {
+              currency {
+                label
+                symbol
+              }
+              amount
+            }
+            brand
+          }
+        }
+      }
+    `;
+  this.setState({products: PRODUCTS})
+  }
+
+  componentDidUpdate(prevProps) {
+    if(this.props.activeCategory !== prevProps.activeCategory) {
+      const PRODUCTS = gql`
+        {
+          __typename @skip(if: true)
+          category(input: {title: "${this.props.activeCategory}"}) {
+            __typename @skip(if: true)
+            name
+            products {
+              id
+              __typename @skip(if: true)
+              name
+              inStock
+              gallery
+              description
+              category
+              attributes {
+                id
+                __typename @skip(if: true)
+                name
+                type
+                items {
+                  value
+                }
+              }
+              prices {
+                currency {
+                  label
+                  symbol
+                }
+                amount
+              }
+              brand
+            }
+          }
+        }
+      `;
+      this.setState({products: PRODUCTS})
+    }
+
+  }
 
   render() {
+    if(!this.props.activeCategory || !this.state.products) {
+      return (<div>loading...</div>)
+    }
     return (
       <div className='products-flex'>
-        <Query query={GET_PRODUCTS}>
+        <Query query={this.state.products}>
           {( { loading, data} ) => {
             if(loading) return 'loading...';
-            const { categories } = data;
-            let path = window.location.pathname.substring(10,50);
 
-            return categories.filter(category => {
-              if(!path) {
-                return category.name[0]
-              } else {
-                return category.name === path
-              }
-            })[0].products
-            .map( product => <ProductElement key={product.id} data={product} / > );
+            return data.category.products.map( product => <ProductElement key={product.id} data={product} / > );
           }}
         </Query>
       </div>
@@ -68,7 +113,7 @@ class ProductsOverlay extends Component {
 }
 
 const mapStateToProps = (state) => ({
-  category: state.main.activeCategory
+  activeCategory: state.main.activeCategory
 })
 
 export default connect(mapStateToProps)(ProductsOverlay);
