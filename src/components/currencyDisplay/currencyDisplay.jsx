@@ -10,7 +10,7 @@ class CurrencyDisplay extends Component {
         this.props.prices.filter( price => price.currency.label === this.props.currency.label)
         .map( (price, i) => (
           <div key={i}>
-            <span className={`${(this.props.style === 'PDP' || this.props.style === 'cart') ? 'currency-cart-text' : 'currency-display-text'}`}>{price.currency.symbol}{price.amount.toFixed(2)}</span>
+            <span className={`${(this.props.styleType === 'PDP' || this.props.styleType === 'cart') ? 'currency-cart-text' : 'currency-display-text'}`}>{price.currency.symbol}{price.amount.toFixed(2)}</span>
           </div>
         ))
       }

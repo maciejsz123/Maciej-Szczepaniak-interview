@@ -28,6 +28,8 @@ export const addItemToCart = (item, attributes) => {
       }
       if(duplicate) {
         return elem
+      } else {
+        return null
       }
     })
 

@@ -62,7 +62,7 @@ class CartProductElement extends Component {
     }
   }
 
-  render() {    
+  render() {
     let gallery = <div></div>
     if(this.props.overlay) {
       gallery = (
@@ -104,7 +104,7 @@ class CartProductElement extends Component {
         <div className='d-flex-column space-between'>
           <div className={this.props.overlay ? 'overlay-title' : 'cart-title'}>{this.props.cartElem.item.brand}</div>
           <div className={this.props.overlay ? 'overlay-title' : 'cart-item-name'}>{this.props.cartElem.item.name}</div>
-          <CurrencyDisplay prices={this.props.cartElem.item.prices} style='cart' />
+          <CurrencyDisplay prices={this.props.cartElem.item.prices} styleType='cart' />
           <div>
             {
               this.props.cartElem.item.attributes.map( (attribute, i) => (

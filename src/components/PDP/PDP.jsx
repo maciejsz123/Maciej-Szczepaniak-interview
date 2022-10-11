@@ -90,7 +90,7 @@ class PDP extends Component {
                   {product.gallery.map( (img, i) => <img key={img} src={img} alt='img' className='gallery-img' onClick={() => this.setActiveImg(i)}/>)}
                 </div>
                 <div className='full-img-DPD'>
-                  <img src={product.gallery[this.state.activeImg]} alt='PRODUCT IMAGE'/>
+                  <img src={product.gallery[this.state.activeImg]} alt='PRODUCT'/>
                 </div>
                 <div className='description-DPD'>
                   <div>
@@ -120,7 +120,7 @@ class PDP extends Component {
                   </div>
                   <div>
                     <p className='price-text'>PRICE:</p>
-                    <CurrencyDisplay prices={product.prices} style={'PDP'}/>
+                    <CurrencyDisplay prices={product.prices} styleType={'PDP'}/>
                   </div>
                   <div className='button-div-PDP'>
                     {
