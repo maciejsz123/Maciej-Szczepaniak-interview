@@ -23,7 +23,7 @@ class ProductElement extends Component {
       <div className='product-card'>
         <Link to={`/product/${this.props.data.id}`} style={{padding: '10px'}}>
           {outOfStock}
-            <div>
+            <div className='flex justify-center'>
               <img src={this.props.data.gallery[0]} alt='prod' className='product-card-img'/>
               {this.props.data.inStock ? (
                 <div className='hover'>
