@@ -78,7 +78,9 @@ class CartProductElement extends Component {
               <div className='carousel-images' id={`carousel-${this.props.cartElem.id}`}>
                 {this.props.cartElem.item.gallery.map( (item, i) => (
                   <div key={i} className='carousel-elem'>
-                    <img src={item} alt={i} className='carousel-img'/>
+                    <div className='elem-image'>
+                      <img src={item} alt={i} className='carousel-img'/>
+                    </div>
                   </div>
                 ))}
               </div>

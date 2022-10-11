@@ -42,9 +42,15 @@ $media600decreasepx: 40px
 .carousel-elem
   display: inline
 
-.carousel-img
+.elem-image
   width: $carouselWidth
   height: $carouselHeight
+  display: flex
+  justify-content: center
+
+.carousel-img
+  max-width: 100%
+  max-height: 100%
 
 @mixin arrow
   position: absolute
@@ -157,7 +163,7 @@ $media600decreasepx: 40px
   .slider
     width: calc(#{$carouselWidth} - #{$media800decreasepx})
 
-  .carousel-img
+  .elem-image
     width: calc(#{$carouselWidth} - #{$media800decreasepx})
     height: calc(#{$carouselHeight} - #{$media800decreasepx})
 
@@ -201,7 +207,7 @@ $media600decreasepx: 40px
   .slider
     width: calc(#{$carouselWidth} - #{$media600decreasepx})
 
-  .carousel-img
+  .elem-image
     width: calc(#{$carouselWidth} - #{$media600decreasepx})
     height: calc(#{$carouselHeight} - #{$media600decreasepx})
 
